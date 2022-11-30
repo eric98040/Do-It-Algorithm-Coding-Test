@@ -1,4 +1,4 @@
-:exclamation: **자료구조** :exclamation:
+# :exclamation: **Data Structure (자료구조)** 
 
 <br/>
 
