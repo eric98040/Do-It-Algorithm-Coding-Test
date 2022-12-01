@@ -4,6 +4,10 @@
 
 "[Do it! 알고리즘 코딩 테스트 - 파이썬 편](http://www.yes24.com/Product/Goods/111686187)"
 
+**제가 실제로 풀면서 작성했던 코드들을 기록했습니다.**
+
+**총 100문제이고, 자세한 해설이 필요하신 분들은 직접 책을 구매하시는 것을 추천합니다.**
+
 <img src = "https://user-images.githubusercontent.com/97127994/204630861-e275be57-ec4b-44c2-a5c2-77faec88fa95.jpeg" width="30%" height="30%">
 
 <br/>
