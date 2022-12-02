@@ -1,0 +1,53 @@
+'''
+< 슬라이딩 윈도우 >
+
+- '연속된 배열 안에서 범위의 크기가 일정할 때' 
+- 2개의 포인터로 범위를 지정한 다음, 범위를 유지한 채로 이동하며 문제를 해결
+
+'''
+# < 서브 배열 합계 체크 > 
+
+import sys
+
+def max_sub_array(arr, k):
+    maxsum = -sys.maxsize - 1
+    arraysize = len(arr)
+
+    for i in range(arraysize - k + 1):
+        current_sum = 0
+        for j in range(i, i + k):
+            current_sum += arr[j]
+
+        maxsum = max(maxsum, current_sum)
+
+    return maxsum
+
+if __name__ == '__main__':
+    print(max_sub_array([2, 4, 7, 10, 8, 4, 5, 6, 7, 1], 3))
+    
+    
+# < 공통 요소들을 재사용하는 방법 > 
+
+def max_sub_array(arr, k):
+    window_sum = 0
+    max_sum = 0
+    window_start = 0
+
+    for window_end in range(len(arr)):
+        window_sum += arr[window_end]  # 슬라이딩 인덱스 범위 요소 합산
+
+        # 슬라이딩 윈도우의 범위가 k 보다 커진 경우
+        if window_end >= (k - 1):
+            max_sum = max(max_sum, window_sum)
+            window_sum -= arr[window_start]  # 슬라이드 윈도우 범위를 벗어난 요소를 합계에서 제거
+            window_start += 1  # 슬라이드 윈도우 시작 인덱스 증가
+
+    return max_sum
+
+
+
+
+if __name__ == '__main__':
+    print(max_sub_array([2, 4, 7, 10, 8, 4], 3))
+
+# 결과: 25 (7 + 10 + 8)
